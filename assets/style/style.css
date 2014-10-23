@@ -6,11 +6,84 @@
 html {
     font-family: sans-serif;
     color: #333;
-    
+    width: 100%;
+    height: 100%;
     /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
     -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0; /* Remove default margin */
+    width: 100%;
+    height: 100%;
+    
+background: rgb(69,72,77); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(69,72,77,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
+.shrink{overflow: hidden; display: none;}
+.bgdiv {
+
+}
+.spin {
+    -webkit-animation:spin 3s linear infinite;
+    animation:spin 3s linear infinite;
+}
+.preload {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: table !important;
+    color: #c3c3c3;
+    font-size: 3.5em;
+}
+.preload > * {
+    float: none !important;
+    display: table-cell !important;
+    vertical-align: middle;
+    -webkit-animation:spin 3s linear infinite;
+    animation:spin 3s linear infinite;
+}
+keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+.digit-Button {
+    border-width: 2px;
+    color: #ccc;
+}
+
+
+.content {
+    height:auto !important;
+    height:100%;
+    min-height:100%;
+    position:relative;
+    margin: 0;
+    padding: 0;
+}
+.empty {
+    height:40px; /* равняется высоте футера */
+}
+footer {
+    height:40px;
+    margin-top:-40px;
+    position:relative;
+    text-align: center;
+}
+footer div {
+    font-size: 200%;
+
+}
+
+footer div > i:hover {
+    -webkit-animation:spin 3s linear infinite; 
+    animation:spin 3s linear infinite;
+}
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+

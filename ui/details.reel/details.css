@@ -1,0 +1,35 @@
+.Details {
+    border: 1px solid #eee; 
+    border-radius: 0.3em;
+    color: #fff;
+    padding: 0.7em;
+    margin: 0.7em 0;  
+}
+.Details.animated {
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation: show_anim 5s;
+    -webkit-animation-fill-mode: forwards;
+}
+.Details span {
+    float: left;
+    color: #c3c3c3;
+}
+
+.Details ul {
+    list-style-type: none;
+}
+.Details ul li {
+    display: inline-block;
+    border: 1px solid #eee; 
+    border-radius: 0.3em;
+    padding: 0.3em;
+    box-shadow: 0 0 3px pink;
+}
+.scroller {
+    height: 100%;
+}
+
+@-webkit-keyframes show_anim {
+    from {opacity: 0;}
+    to  {opacity: 1;}
+}

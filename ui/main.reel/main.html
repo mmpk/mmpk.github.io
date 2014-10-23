@@ -2,21 +2,378 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"},
+                "player": {"#": "iframe"}
+            }
+        },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "previousStride",
+                "handler": {"@": "flow"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "actionEventListener2": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "nextStride",
+                "handler": {"@": "flow"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "closeBtn": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "closeBtn"},
+                "enabled": true,
+                "label": ""
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+        "details": {
+            "prototype": "ui/details.reel",
+            "properties": {
+                "element": {"#": "details"}
+            }
+        },
+        "flow": {
+            "prototype": "montage/ui/flow.reel",
+            "properties": {
+                "element": {"#": "flow"},
+                "cameraFov": 50,
+                "cameraPosition": [
+                    87.22957723769605,
+                    -6.225,
+                    1122.1386064088697
+                ],
+                "cameraTargetPoint": [
+                    87.22957723769605,
+                    -6.225,
+                    -377.8613935911303
+                ],
+                "delegate": {"@": "owner"},
+                "flowEditorMetadata": {
+                    "flowEditorVersion": 0.1,
+                    "shapes": [
+                        {
+                            "type": "FlowSpline",
+                            "name": "Spline 1",
+                            "pathIndex": 0,
+                            "id": 69
+                        }
+                    ]
+                },
+                "hasElasticScrolling": true,
+                "hasSelectedIndexScrolling": true,
+                "isSelectionEnabled": true,
+                "linearScrollingVector": [
+                    -300,
+                    0
+                ],
+                "momentumDuration": "3000",
+                "paths": [
+                    {
+                        "knots": [
+                            {
+                                "previousHandlerPosition": [],
+                                "nextDensity": 10,
+                                "previousDensity": 10,
+                                "knotPosition": [
+                                    -1695.3485813953487,
+                                    0,
+                                    -586.546511627907
+                                ],
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "rotateZ": 0,
+                                "opacity": 0.5,
+                                "nextHandlerPosition": [
+                                    -1695.3485813953487,
+                                    0,
+                                    -586.546511627907
+                                ]
+                            },
+                            {
+                                "knotPosition": [
+                                    -6.9767441860462895,
+                                    0,
+                                    201.82558139534888
+                                ],
+                                "nextHandlerPosition": [
+                                    732.558139534884,
+                                    0,
+                                    201.82558139534888
+                                ],
+                                "previousHandlerPosition": [
+                                    -746.5116279069766,
+                                    0,
+                                    201.82558139534888
+                                ],
+                                "nextDensity": 2,
+                                "previousDensity": 2,
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "rotateZ": 0,
+                                "opacity": 1
+                            },
+                            {
+                                "knotPosition": [
+                                    1834.883720930232,
+                                    0,
+                                    -572.5930232558139
+                                ],
+                                "nextHandlerPosition": [
+                                    1834.883720930232,
+                                    0,
+                                    -572.5930232558139
+                                ],
+                                "previousHandlerPosition": [
+                                    1834.883720930232,
+                                    0,
+                                    -572.5930232558139
+                                ],
+                                "nextDensity": 10,
+                                "previousDensity": 10,
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "rotateZ": 0,
+                                "opacity": 0.5
+                            }
+                        ],
+                        "units": {
+                            "rotateX": "",
+                            "rotateY": "",
+                            "rotateZ": "",
+                            "opacity": ""
+                        },
+                        "headOffset": 6,
+                        "tailOffset": 0
+                    }
+                ],
+                "scrollingTransitionDuration": 500,
+                "scrollingTransitionTimingFunction": "ease",
+                "scrollVectorX": true,
+                "scrollVectorY": true,
+                "selectedIndexScrollingOffset": 0,
+                "stride": "1"
+            }
+        },
+        "image1": {
+            "prototype": "digit/ui/image.reel",
+            "properties": {
+                "element": {"#": "image1"},
+                "crossOrigin": null
+            },
+            "bindings": {
+                "src": {
+                    "<-": "\"http://image.tmdb.org/t/p/w300\" + @flow:iteration.object.poster_path"
                 }
             }
+        },
+        "nex": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "nex"},
+                "enabled": true,
+                "label": ""
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener2"}
+                }
+            ]
+        },
+        "overlay": {
+            "prototype": "montage/ui/modal-overlay.reel",
+            "properties": {
+                "element": {"#": "overlay"},
+                "position": {
+                    "top": 0,
+                    "left": 0
+                }
+            }
+        },
+        "pre": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "pre"},
+                "enabled": true,
+                "label": ""
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
+        },
+        "promiseController": {
+            "prototype": "montage/core/promise-controller",
+            "properties": {
+                "fulfilled": true,
+                "pending": true,
+                "rejected": true
+            }
+        },
+        "substitution": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "substitution"},
+                "shouldLoadComponentTree": true
+            },
+            "bindings": {
+                "switchValue": {"<-": "'s' + @promiseController.progress"}
+            }
+        },
+        "title": {
+            "prototype": "digit/ui/title.reel",
+            "properties": {
+                "element": {"#": "title"},
+                "value": "Title"
+            },
+            "bindings": {
+                "value": {
+                    "<-": "\"Rate \"+@details.data.vote_average"
+                }
+            }
+        },
+        "Toggle": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "Toggle"},
+                "enabled": true,
+                "label": ""
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+        "trailer_btn": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "trailer_btn"},
+                "active": false,
+                "enabled": true,
+                "label": "Trailer  "
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="none" class="Main">
+        <div class="content">
+            <div data-montage-id="overlay" class="Overlay">
+                <div data-montage-id="substitution">
+                    <div data-arg="s0" class="preload">
+                        <i class="fa fa-repeat spin"></i>
+                    </div>
+                    <div data-arg="s1" class="trailer">
+                        <button id="close" data-montage-id="closeBtn" class="digit-Button--glass">
+                            <i class="fa fa-times-circle-o"></i>
+                        </button>
+                        <iframe data-montage-id="iframe" class="montage-youtube-player" type="text/html" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <button data-montage-id="Toggle" class="nav_btn digit-Button--glass">
+                    <i class="fa fa-th-list"></i>
+                </button>
+                <div class="logo">
+                    <h3>
+                        <i class="ilogo flaticon-3d3"></i>
+                        Imbd-API
+                    </h3>
+                </div>
+                <ul>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                    <li>
+                        Item
+                    </li>
+                </ul>
+            </nav>
+            <div class="Rate">
+                <h1 data-montage-id="title"></h1>
+            </div>
+            <div class="wrap-flow">
+                <div>
+                    <button data-montage-id="pre" class="wrap_btn">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </button>
+                </div>
+                <div style="position: relative; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
+                    <div data-montage-id="image1"></div>
+                </div>
+                <div>
+                    <button data-montage-id="nex" class="wrap_btn">
+                        <i class="fa fa-chevron-right fa-5x"></i>
+                    </button>
+                </div>
+            </div>
+            <div style="text-align: center;font-size: 200%;">
+                <button data-montage-id="trailer_btn">
+                    <i class="fa fa-video-camera"></i>
+                </button>
+            </div>
+            <div class="det">
+                <div data-montage-id="details"></div>
+            </div>
+            <div class="empty"></div>
+        </div>
+        <footer>
+            <div>
+                <i class="fa fa-github"></i>
+                <i class="fa fa-html5"></i>
+                <i class="fa fa-vk"></i>
+                <i class="fa fa-google"></i>
+                <i class="fa fa-btc"></i>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="details.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            },
+            "bindings": {
+                "classList.has('animated')": {"<-": "@owner.parentComponent.templateObjects.flow._isTransitioningScroll"}
+            }
+        },
+        "Overview": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "Overview"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.data.overview"}
+            }
+        },
+        "Release": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "Release"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.data.release_date"}
+            }
+        },
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"}
+            },
+            "_dev": {
+                "isHidden": true
+            },
+            "bindings": {
+                "content": {"<-": "@owner.data.genres"}
+            }
+        },
+        "Runtime": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "Runtime"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "(@owner.data.runtime / 60).floor() + 'h ' + @owner.data.runtime%60 + 'min'"}
+            }
+        },
+        "scroller": {
+            "prototype": "digit/ui/scroller.reel",
+            "properties": {
+                "element": {"#": "scroller"},
+                "hasMomentum": true
+            }
+        },
+        "text": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "text"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.data.status"}
+            }
+        },
+        "text3": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "text3"},
+                "value": "Text"
+            },
+            "_dev": {
+                "isHidden": true
+            },
+            "bindings": {
+                "value": {"<-": "@repetition:iteration.object.name"}
+            }
+        },
+        "Title": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "Title"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.data.title"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Details">
+        <div data-montage-id="scroller" class="scroller">
+            <p data-montage-id="Title"></p>
+            <span>
+                overview:
+            </span>
+            <p data-montage-id="Overview"></p>
+            genre:
+            <ul data-montage-id="repetition">
+                <li data-montage-id="text3"></li>
+            </ul>
+            <span>
+                release date:
+            </span>
+            <p data-montage-id="Release"></p>
+            <span>
+                runtime:
+            </span>
+            <p data-montage-id="Runtime"></p>
+                status:
+            <p data-montage-id="text"></p>
+        </div>
+    </div>
+</body>
+</html>
