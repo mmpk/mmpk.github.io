@@ -42,16 +42,17 @@ background: rgb(69,72,77); /* Old browsers */
     display: table !important;
     color: #c3c3c3;
     font-size: 3.5em;
+    overflow: hidden;
 }
 .preload > * {
     float: none !important;
     display: table-cell !important;
     vertical-align: middle;
-    -webkit-transform:rotate(180deg);
-    transform:rotate(180deg);
+    -webkit-animation:spin 3s linear infinite;
+    animation:spin 3s linear infinite;
 }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg);} }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); -moz-transform: rotate(360deg);-o-transform: rotate(360deg); } }
 
 .digit-Button {
     border-width: 2px;
