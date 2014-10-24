@@ -47,11 +47,8 @@ background: rgb(69,72,77); /* Old browsers */
     float: none !important;
     display: table-cell !important;
     vertical-align: middle;
-    -webkit-animation:spin 3s linear infinite;
-        -moz-animation:spin 3s linear infinite; 
-    -o-animation:spin 3s linear infinite; 
-    animation:spin 3s linear infinite;
-    animation:spin 3s linear infinite;
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
 }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
