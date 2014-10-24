@@ -209,3 +209,11 @@ nav li:hover {
     from {font-size: 100%; opacity: 0.1;}
     to {font-size: 300%; opacity: 1}
 }
+@-moz-keyframes shownavonsmall {
+    from {font-size: 100%; opacity: 0.1;}
+    to {font-size: 300%; opacity: 1}
+}
+@keyframes shownavonsmall {
+    from {font-size: 100%; opacity: 0.1;}
+    to {font-size: 300%; opacity: 1}
+}
